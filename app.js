@@ -1,3 +1,8 @@
+let channels = [
+  {name: 'Hardware Support'},
+  {name: 'Software Support'}
+];
+
 class Channel extends React.Component {
   onClick(){
     console.log('Hey!!!  I was clickTed: ', this.props.name);
@@ -9,5 +14,20 @@ class Channel extends React.Component {
   }
 }
 
-ReactDOM.render(<Channel name='Hardware Supported'/>,
+class ChannelList extends React.Component {
+  render(){
+    return(
+      <ul>
+        {this.props.channels.map( channel => {
+          return (
+            <Channel name={channel.name} />
+            )
+          }
+        )}
+      </ul>
+    )
+  }
+}
+
+ReactDOM.render(<ChannelList channels={channels} />,
   document.getElementById('app'));
