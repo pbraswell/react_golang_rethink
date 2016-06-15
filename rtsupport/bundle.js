@@ -44,18 +44,20 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var alerter = __webpack_require__(1);
 	alerter('Here is an alert!');
-
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
-	module.exports = function(message) {
-	  alert(message);
-	}
+	"use strict";
 
+	module.exports = function (message) {
+	  alert(message);
+	};
 
 /***/ }
 /******/ ]);
